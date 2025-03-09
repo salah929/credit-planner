@@ -1,0 +1,118 @@
+label {
+    padding-bottom: .2rem;
+}
+
+h1 {
+    margin-top: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.icon-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Style the tool tip box */
+.tooltip {
+    visibility: hidden;
+    width: 400px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    opacity: 1;
+    bottom: -250%; /* Position below the icon */
+    transform: translateX(-40%);
+    transition: opacity 0.3s;
+}
+
+/* Show the tool tip box when mouse hover */
+.icon-container:hover .tooltip {
+    visibility: visible;
+}
+
+/* Adjust the distance between the lines of the summary */
+p {
+    margin-bottom: 0.2rem;
+}
+ /* Adjust the margin between the button and the first line of the summary */
+#table-container p:first-child {
+    margin-top: 1rem;
+}
+
+/* The table is hidden until the user click Calculate button */
+#table {
+    visibility: hidden;
+}
+
+/* Style Calculate button */
+#btn {
+    background-color: #4CAF50; /* Green */
+    color: white; /* White Text */
+    margin: 0 auto !important;
+    border: 2px; /* No Border */
+    padding: 8px 16px; /* Size */
+    font-size: 18px; /* Text Size */
+    border-radius: 8px; /* Rounded Corners */
+    cursor: pointer; /* Pointer Cursor */
+    transition: all 0.3s ease; /* Smooth Effect */
+}
+
+#btn:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+
+/* Media queries */
+
+/* X-Small devices (portrait phones, less than 360px) */
+@media (max-width: 360px) {
+    #table {
+        font-size: 80%;
+    }
+    .tooltip {
+        width: 250px;
+        transform: translateX(-70%);
+        bottom: -550%; /* Position below the icon */
+    }
+}
+
+/* Small devices (portrait phones, less than 576px) */
+@media screen and (max-width: 576px) {
+    .tooltip {
+        width: 300px;
+        transform: translateX(-70%);
+        bottom: -470%; /* Position below the icon */
+    }
+}
+
+
+
+/* large or landscape phones (576px and up) */
+@media screen and (min-width: 576px) {
+    .tooltip {
+        width: 350px;
+        transform: translateX(-70%);
+        bottom: -370%; /* Position below the icon */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    .tooltip {
+        transform: translateX(-50%);
+        bottom: -340%; /* Position below the icon */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .tooltip {
+        transform: translateX(-40%);
+        bottom: -300%; /* Position below the icon */
+    }
+}
