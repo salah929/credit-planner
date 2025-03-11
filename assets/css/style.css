@@ -30,7 +30,9 @@ h1 {
     transition: opacity 0.3s;
 }
 
-/* Show the tool tip box when mouse hover */
+/* Show the tool tip box when mouse hover 
+   for mobile phones and tablets, the touch function triggers the next hover functionality
+*/
 .icon-container:hover .tooltip {
     visibility: visible;
 }
