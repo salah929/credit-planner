@@ -137,24 +137,32 @@ function formIsValid() {
  * @returns 
  */
 function checkManualValidation() {
-    let loanAmount = Number(document.getElementById("amount").value);
+    let loanAmountElement = document.getElementById("amount");
+    let loanAmount = Number(loanAmountElement.value);
     if (loanAmount <= 0) {
-        alert ("Credit amount can't be less than or equal to zero!")
+        alert ("Credit amount can't be less than or equal to zero!");
+        loanAmountElement.focus();
         return false;
     } 
-    let interestPerYear = Number(document.getElementById("interest").value / 100);
+    let interestAmountElement = document.getElementById("interest");
+    let interestPerYear = Number(interestAmountElement.value / 100);
     if (interestPerYear < 0) {
-        alert ("Interest can't be less than zero!")
-        return false;
-    } 
-    let year = Number(document.getElementById("year").value);
-    if (year < 1900 || year > 2100) {
-        alert("Year should be between 1900 and 2100!")
+        alert ("Interest can't be less than zero!");
+        interestAmountElement.focus();
         return false;
     }
-    let monthlyPayment = Number(document.getElementById("payment").value);
+    let yearElement = document.getElementById("year");
+    let year = Number(yearElement.value);
+    if (year < 1900 || year > 2100) {
+        alert("Year should be between 1900 and 2100!");
+        yearElement.focus();
+        return false;
+    }
+    let monthlyPaymentElement = document.getElementById("payment");
+    let monthlyPayment = Number(monthlyPaymentElement.value);
     if (monthlyPayment <= 0) {
-        alert("Monthly payment can't be less than or equal to zero!")
+        alert("Monthly payment can't be less than or equal to zero!");
+        monthlyPaymentElement.focus();
         return false;
     }
     let creditAmount = Number(document.getElementById("amount").value);
@@ -162,6 +170,7 @@ function checkManualValidation() {
     let firstInterestAmount = creditAmount * interestPerMonth;
     if (firstInterestAmount > monthlyPayment) {
         alert("The monthly payment does not cover the intereset of the first month!");
+        monthlyPaymentElement.focus();
         return false;
     }
     return true;

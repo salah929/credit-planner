@@ -53,7 +53,7 @@ p {
 
 /* Style Calculate button */
 #btn {
-    background-color: #4CAF50; /* Green */
+    background-color: #212121; /* Black */
     color: white; /* White Text */
     margin: 0 auto !important;
     border: 2px; /* No Border */
@@ -65,7 +65,7 @@ p {
 }
 
 #btn:hover {
-    background-color: #45a049; /* Darker Green */
+    background-color: #373737; /* Gray */
 }
 
 
